@@ -74,6 +74,28 @@ const Home = () => {
             </a>
           </motion.div>
 
+          {/* Product Hunt Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="mt-6 flex justify-center"
+          >
+            <a 
+              href="https://www.producthunt.com/posts/recfix-extension?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-recfix&#0045;extension" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-90 transition-opacity"
+            >
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=770528&theme=neutral&t=1736448002427" 
+                alt="RecFix Extension - Fix your YouTube recommendations, fast and hassle-free" 
+                width="250" 
+                height="54" 
+              />
+            </a>
+          </motion.div>
+
           {/* Install Counter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

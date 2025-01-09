@@ -9,6 +9,7 @@ import Guide from './pages/Guide'
 import Feedback from './pages/Feedback'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Terms from './pages/Terms'
+import Showcase from './pages/Showcase'
 
 // Page transition variants
 const pageVariants = {
@@ -327,6 +328,7 @@ const PageWrapper = ({ children }) => {
 
 function App() {
   const location = useLocation()
+  const isShowcasePage = location.pathname === '/showcase'
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -334,8 +336,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <ScrollProgress />
-      <Navigation />
+      {!isShowcasePage && <ScrollProgress />}
+      {!isShowcasePage && <Navigation />}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
@@ -344,11 +346,12 @@ function App() {
           <Route path="/feedback" element={<PageWrapper><Feedback /></PageWrapper>} />
           <Route path="/privacy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
           <Route path="/terms" element={<PageWrapper><Terms /></PageWrapper>} />
+          <Route path="/showcase" element={<Showcase />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </AnimatePresence>
-      <ScrollToTop />
+      {!isShowcasePage && <ScrollToTop />}
     </div>
   )
 }
