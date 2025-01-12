@@ -32,7 +32,7 @@ const Guide = () => {
                   <li>Extract the ZIP file to a location you'll remember</li>
                 </ol>
                 <motion.a
-                  href="https://github.com/BobbyDXL/RecFix-Extension/releases/download/v1.0.0/RecFix.Extension.zip"
+                  href="https://github.com/BobbyDXL/RecFix-Extension/releases/download/v1.1.0/RecFix.Extension.v1.1.zip"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
