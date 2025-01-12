@@ -64,7 +64,7 @@ const Home = () => {
               Install RecFix Now
             </button>
             <a 
-              href="https://buymeacoffee.com/bobbydxl" 
+              href="https://ko-fi.com/bobbydxl" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-50 transition-colors border-2 border-indigo-600 flex items-center justify-center gap-2"
@@ -557,7 +557,7 @@ const Home = () => {
               <FiYoutube className="text-2xl text-indigo-500" />
               <span className="text-white font-semibold">RecFix</span>
             </div>
-            <p className="mb-4">© 2024 RecFix. All rights reserved.</p>
+            <p className="mb-4">© 2025 RecFix. All rights reserved.</p>
             <div className="space-x-4">
               <Link 
                 to="/privacy" 

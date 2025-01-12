@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiDownload, FiYoutube, FiSettings, FiCheck, FiAlertTriangle } from 'react-icons/fi'
 import { HiOutlineLightningBolt } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 const Guide = () => {
   return (
@@ -26,12 +27,12 @@ const Guide = () => {
               <div>
                 <h2 className="text-xl font-semibold mb-4">1. Download RecFix</h2>
                 <ol className="list-decimal list-inside space-y-3 text-gray-600 mb-6">
-                  <li>Go to our GitHub repository</li>
+                  <li>Go to our <a href="https://github.com/BobbyDXL/RecFix-Extension/tree/v1.0.0" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a></li>
                   <li>Click the "Code" button and select "Download ZIP"</li>
                   <li>Extract the ZIP file to a location you'll remember</li>
                 </ol>
                 <motion.a
-                  href="https://github.com/BobbyDXL/RecFix-Extension/releases/tag/v1.0.0"
+                  href="https://github.com/BobbyDXL/RecFix-Extension/releases/download/v1.0.0/RecFix.Extension.zip"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -149,9 +150,9 @@ const Guide = () => {
                     <li>Verify your API key is correctly entered in the settings</li>
                   </ul>
                   <div className="mt-4">
-                    <a href="/feedback" className="text-orange-800 hover:text-orange-900 underline">
+                    <Link to="/feedback" className="text-orange-800 hover:text-orange-900 underline">
                       Still having issues? Contact support
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
