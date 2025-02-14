@@ -31,11 +31,9 @@ const Guide = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold mb-4">1. Download RecFix</h2>
-                  <ol className="list-decimal list-inside space-y-3 text-gray-600 mb-6">
-                    <li>Go to our <a href="https://github.com/BobbyDXL/RecFix-Extension/tree/v1.0.0" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a></li>
-                    <li>Click the "Code" button and select "Download ZIP"</li>
-                    <li>Extract the ZIP file to a location you'll remember</li>
-                  </ol>
+                  <p className="text-gray-600 mb-6">
+                    Click the download button below or visit our <a href="https://github.com/BobbyDXL/RecFix-Extension/tree/v1.0.0" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a> to get the latest version. After downloading, extract the ZIP file to a location you'll remember.
+                  </p>
                   <motion.a
                     href="https://github.com/BobbyDXL/RecFix-Extension/releases/download/v1.1.0/RecFix.Extension.v1.1.zip"
                     target="_blank"
