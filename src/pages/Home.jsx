@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { FiYoutube, FiSettings, FiShield, FiMoon, FiCoffee } from 'react-icons/fi'
+import { FiYoutube, FiSettings, FiShield, FiMoon, FiCoffee, FiChrome, FiSlash } from 'react-icons/fi'
 import { BiAnalyse, BiReset, BiFilterAlt } from 'react-icons/bi'
 import { MdOutlinePrivacyTip, MdOutlineSpeed, MdOutlineStorage } from 'react-icons/md'
 import { HiOutlineLightningBolt, HiOutlinePhotograph } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
+import { SiFirefox } from 'react-icons/si'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -60,8 +61,12 @@ const Home = () => {
               onClick={() => navigate('/guide')}
               className="w-full sm:w-auto bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
             >
-              <HiOutlineLightningBolt className="text-xl" />
-              Install RecFix Now
+              <div className="flex items-center gap-1">
+                <FiChrome className="text-xl" />
+                <FiSlash className="text-xl" />
+                <SiFirefox className="text-xl" />
+              </div>
+              Add to Browser
             </button>
             <a 
               href="https://ko-fi.com/bobbydxl" 
@@ -531,21 +536,31 @@ const Home = () => {
           <HiOutlineLightningBolt />
         </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-6">Ready to Fix Your YouTube Experience?</h2>
-          <p className="text-xl mb-8 text-indigo-100">Join thousands of users who have already improved their recommendations.</p>
-          <motion.button
-            onClick={() => navigate('/guide')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-50 transition-colors flex items-center gap-2 mx-auto"
-          >
-            <HiOutlineLightningBolt className="text-xl" />
-            Add to Chrome - It's Free
-          </motion.button>
-          <p className="text-sm mt-4 text-indigo-200 flex items-center justify-center gap-2">
-            <HiOutlineLightningBolt className="text-xl" />
-            2 recommendation fixes per day included
-          </p>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-4xl font-bold mb-4">Ready to Fix Your YouTube Experience?</h2>
+            <p className="text-xl mb-8 text-indigo-100 max-w-2xl">
+              Join thousands of users who have already improved their recommendations. Available for both Chrome and Firefox.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+              <motion.button
+                onClick={() => navigate('/guide')}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative px-8 py-3 bg-white rounded-full font-cabinet flex items-center gap-2 text-gray-900 shadow-lg"
+              >
+                <div className="flex items-center gap-1">
+                  <FiChrome className="text-xl" />
+                  <FiSlash className="text-xl" />
+                  <SiFirefox className="text-xl" />
+                </div>
+                <span>Add to Browser</span>
+              </motion.button>
+              <div className="flex items-center gap-2 text-indigo-200">
+                <HiOutlineLightningBolt className="text-xl" />
+                <span>2 recommendation fixes per day included</span>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.section>
 
@@ -581,7 +596,7 @@ const Home = () => {
                 Contact
               </Link>
               <a 
-                href="https://github.com/BobbyDXL" 
+                href="https://github.com/BobbyDXL/RecExtension-Updated/tree/v1.2" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-white transition-colors inline-flex items-center gap-1"

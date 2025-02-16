@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
-import { FiDownload, FiYoutube, FiSettings, FiCheck, FiAlertTriangle, FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { FiDownload, FiYoutube, FiSettings, FiCheck, FiAlertTriangle, FiChevronDown, FiChevronUp, FiChrome } from 'react-icons/fi'
 import { HiOutlineLightningBolt } from 'react-icons/hi'
+import { SiFirefox } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 const Guide = () => {
   const [showOptionalSteps, setShowOptionalSteps] = useState(false)
+  const [selectedBrowser, setSelectedBrowser] = useState('chrome') // 'chrome' or 'firefox'
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24">
@@ -14,6 +16,32 @@ const Guide = () => {
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
           Follow these steps to install RecFix and start improving your YouTube recommendations
         </p>
+
+        {/* Browser Selection */}
+        <div className="flex justify-center gap-4 mb-12">
+          <button
+            onClick={() => setSelectedBrowser('chrome')}
+            className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-colors ${
+              selectedBrowser === 'chrome'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            <FiChrome className="text-xl" />
+            Chrome
+          </button>
+          <button
+            onClick={() => setSelectedBrowser('firefox')}
+            className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-colors ${
+              selectedBrowser === 'firefox'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            <SiFirefox className="text-xl" />
+            Firefox
+          </button>
+        </div>
 
         <div className="space-y-8">
           {/* Essential Steps */}
@@ -32,24 +60,45 @@ const Guide = () => {
                 <div>
                   <h2 className="text-xl font-semibold mb-4">1. Download RecFix</h2>
                   <p className="text-gray-600 mb-6">
-                    Click the download button below or visit our <a href="https://github.com/BobbyDXL/RecFix-Extension/tree/v1.0.0" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a> to get the latest version. After downloading, extract the ZIP file to a location you'll remember.
+                    Click the download button below or visit our <a href="https://github.com/BobbyDXL/RecExtension-Updated/tree/v1.2" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a> to get the latest version. After downloading, extract the ZIP file to a location you'll remember.
                   </p>
-                  <motion.a
-                    href="https://github.com/BobbyDXL/RecFix-Extension/releases/download/v1.1.0/RecFix.Extension.v1.1.zip"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
-                  >
-                    <FiDownload />
-                    Download Latest Version
-                  </motion.a>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <motion.a
+                      href="https://github.com/BobbyDXL/RecExtension-Updated/releases/download/v1.2/RecFix.Chrome.zip"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors ${
+                        selectedBrowser === 'chrome'
+                          ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
+                      <FiChrome className="text-xl" />
+                      Download for Chrome
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/BobbyDXL/RecExtension-Updated/releases/download/v1.2/RecFix.Firefox.zip"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors ${
+                        selectedBrowser === 'firefox'
+                          ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
+                      <SiFirefox className="text-xl" />
+                      Download for Firefox
+                    </motion.a>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Step 2: Chrome Setup */}
+            {/* Step 2: Browser Setup */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,13 +111,22 @@ const Guide = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold mb-4">2. Enable Developer Mode</h2>
-                  <ol className="list-decimal list-inside space-y-3 text-gray-600">
-                    <li>Open Google Chrome</li>
-                    <li>Type <code className="bg-gray-100 px-2 py-1 rounded">chrome://extensions/</code> in the address bar</li>
-                    <li>Enable "Developer mode" in the top-right corner</li>
-                    <li>Click "Load unpacked" button</li>
-                    <li>Select the extracted RecFix folder</li>
-                  </ol>
+                  {selectedBrowser === 'chrome' ? (
+                    <ol className="list-decimal list-inside space-y-3 text-gray-600">
+                      <li>Open Google Chrome</li>
+                      <li>Type <code className="bg-gray-100 px-2 py-1 rounded">chrome://extensions/</code> in the address bar</li>
+                      <li>Enable "Developer mode" in the top-right corner</li>
+                      <li>Click "Load unpacked" button</li>
+                      <li>Select the extracted RecFix folder</li>
+                    </ol>
+                  ) : (
+                    <ol className="list-decimal list-inside space-y-3 text-gray-600">
+                      <li>Open Firefox</li>
+                      <li>Type <code className="bg-gray-100 px-2 py-1 rounded">about:debugging#/runtime/this-firefox</code> in the address bar</li>
+                      <li>Click "Load Temporary Add-on"</li>
+                      <li>Navigate to the extracted RecFix folder and select the manifest.json file</li>
+                    </ol>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -144,7 +202,7 @@ const Guide = () => {
                     <h2 className="text-xl font-semibold mb-4">4. Configure RecFix (Optional)</h2>
                     <p className="text-gray-600 mb-4">To enable additional features:</p>
                     <ol className="list-decimal list-inside space-y-3 text-gray-600">
-                      <li>Click the puzzle piece icon in Chrome's toolbar</li>
+                      <li>Click the puzzle piece icon in your browser's toolbar</li>
                       <li>Find and pin RecFix</li>
                       <li>Click the RecFix icon</li>
                       <li>Open settings (gear icon)</li>
@@ -184,8 +242,9 @@ const Guide = () => {
                   <ul className="list-disc list-inside space-y-2 text-orange-700">
                     <li>If the extension doesn't load, try disabling and re-enabling Developer mode</li>
                     <li>Make sure all required files are present in the directory</li>
-                    <li>Check for error messages in Chrome's Developer Tools console (F12)</li>
+                    <li>Check for error messages in your browser's Developer Tools console (F12)</li>
                     <li>Verify your API key is correctly entered in the settings (if using optional features)</li>
+                    <li>For Firefox users, you may need to reload the extension after browser restart</li>
                   </ul>
                   <div className="mt-4">
                     <Link to="/feedback" className="text-orange-800 hover:text-orange-900 underline">

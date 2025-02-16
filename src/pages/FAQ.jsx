@@ -66,7 +66,11 @@ const FAQ = () => {
 const faqs = [
   {
     question: "What is RecFix?",
-    answer: "RecFix is a Chrome extension that helps you improve your YouTube recommendations by analyzing your current recommendations, filtering out unwanted content, and guiding YouTube's algorithm towards content you actually want to see."
+    answer: "RecFix is a browser extension for Chrome and Firefox that helps you improve your YouTube recommendations by analyzing your current recommendations, filtering out unwanted content, and guiding YouTube's algorithm towards content you actually want to see."
+  },
+  {
+    question: "Which browsers are supported?",
+    answer: "RecFix is currently available for both Google Chrome and Mozilla Firefox. We're actively working on supporting additional browsers in the future."
   },
   {
     question: "How does RecFix work?",
@@ -74,27 +78,27 @@ const faqs = [
   },
   {
     question: "Is RecFix free to use?",
-    answer: "Yes, RecFix is free to use! However, due to YouTube API limitations, you are limited to 2 recommendation fixes per day to prevent excessive API usage."
+    answer: "Yes, RecFix is completely free to use! To ensure optimal performance and prevent API quota exhaustion, you get 2 recommendation fixes per day."
   },
   {
     question: "Why do I need a YouTube API key?",
-    answer: "A YouTube API key is required to interact with YouTube's services. This allows RecFix to analyze your recommendations and make improvements. Don't worry - we provide step-by-step instructions on how to get your API key."
+    answer: "A YouTube API key is required to interact with YouTube's services. This allows RecFix to analyze your recommendations and make improvements. We provide step-by-step instructions on how to get your API key in our installation guide."
   },
   {
     question: "Is my data safe?",
-    answer: "Yes! RecFix operates entirely in your browser. Your data and preferences are stored locally and are never sent to third-party servers. Your API key is stored securely using encryption."
+    answer: "Absolutely! RecFix operates entirely in your browser. Your data and preferences are stored locally and are never sent to third-party servers. Your API key is stored securely using encryption, and all processing happens on your device."
   },
   {
-    question: "Why isn't RecFix on the Chrome Web Store?",
-    answer: "RecFix is currently in development and testing phase. Once we've gathered sufficient feedback and ensured everything works perfectly, we plan to publish it on the Chrome Web Store."
+    question: "Why isn't RecFix on the Chrome Web Store/Firefox Add-ons?",
+    answer: "RecFix is currently in active development and testing phase. Once we've gathered sufficient feedback and ensured everything works perfectly, we plan to publish it on both the Chrome Web Store and Firefox Add-ons marketplace."
   },
   {
     question: "How do I update RecFix?",
-    answer: "To update RecFix, download the latest version from our GitHub repository and follow the same installation steps. Chrome will automatically update the existing installation."
+    answer: "To update RecFix, simply download the latest version for your browser from our GitHub repository and follow the same installation steps. Your browser will automatically update the existing installation while preserving your settings."
   },
   {
     question: "What should I do if RecFix isn't working?",
-    answer: "First, check if your API key is valid and properly configured. If issues persist, try disabling and re-enabling the extension, or check the console for error messages. You can also contact us through the feedback form for support."
+    answer: "First, check if your API key is valid and properly configured. If issues persist, try these steps: 1) Disable and re-enable the extension, 2) Check the console for error messages (F12), 3) Verify you're using the latest version, 4) Contact us through the feedback form for support."
   }
 ]
 

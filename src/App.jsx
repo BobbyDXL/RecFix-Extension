@@ -204,7 +204,7 @@ const Navigation = () => {
                   className="relative px-6 py-2.5 bg-white rounded-full font-cabinet flex items-center gap-2 text-gray-900"
                 >
                   <HiOutlineLightningBolt className="text-xl text-indigo-600" />
-                  <span>Add to Chrome</span>
+                  <span>Install Extension</span>
                 </motion.button>
               </div>
             </div>
