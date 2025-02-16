@@ -60,39 +60,45 @@ const Guide = () => {
                 <div>
                   <h2 className="text-xl font-semibold mb-4">1. Download RecFix</h2>
                   <p className="text-gray-600 mb-6">
-                    Click the download button below or visit our <a href="https://github.com/BobbyDXL/RecExtension-Updated/tree/v1.2" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">GitHub repository</a> to get the latest version. After downloading, extract the ZIP file to a location you'll remember.
+                    Click the download button below or visit our {" "}
+                    <a 
+                      href={selectedBrowser === 'chrome' 
+                        ? "https://github.com/BobbyDXL/RecFix-Extension-Chrome"
+                        : "https://github.com/BobbyDXL/RecFix-Extension-Firefox"} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-indigo-600 hover:text-indigo-500"
+                    >
+                      {selectedBrowser === 'chrome' ? "Chrome" : "Firefox"} repository
+                    </a>
+                    {" "}to get the latest version. After downloading, extract the ZIP file to a location you'll remember.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <motion.a
-                      href="https://github.com/BobbyDXL/RecExtension-Updated/releases/download/v1.2/RecFix.Chrome.zip"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors ${
-                        selectedBrowser === 'chrome'
-                          ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                      }`}
-                    >
-                      <FiChrome className="text-xl" />
-                      Download for Chrome
-                    </motion.a>
-                    <motion.a
-                      href="https://github.com/BobbyDXL/RecExtension-Updated/releases/download/v1.2/RecFix.Firefox.zip"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors ${
-                        selectedBrowser === 'firefox'
-                          ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                      }`}
-                    >
-                      <SiFirefox className="text-xl" />
-                      Download for Firefox
-                    </motion.a>
+                    {selectedBrowser === 'chrome' ? (
+                      <motion.a
+                        href="https://github.com/BobbyDXL/RecFix-Extension-Chrome/archive/refs/heads/main.zip"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-6 py-2 rounded-full inline-flex items-center gap-2 bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                      >
+                        <FiChrome className="text-xl" />
+                        Download for Chrome
+                      </motion.a>
+                    ) : (
+                      <motion.a
+                        href="https://github.com/BobbyDXL/RecFix-Extension-Firefox/archive/refs/heads/main.zip"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-6 py-2 rounded-full inline-flex items-center gap-2 bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                      >
+                        <SiFirefox className="text-xl" />
+                        Download for Firefox
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </div>
